@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Movie App</title>
+</head>
+<body>
+<div th:fragment="navbar">
+<a th:href="@{/}">Home</a>
+<a th:href="@{/movie/add}">Add Movie</a>
+<a th:href="@{/movie/view}">View</a>
+</div>
+  <div th:fragment="footer">
+  <h3>&copy; All Copy Right Reserved</h3>
+  </div>
+</body>
+</html>

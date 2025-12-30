@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Movie App</title>
+</head>
+<body>
+<div th:replace="fragments/Navbar :: navbar">
+</div>
+
+<!--/* <img th:src="@{/img/movielogo.jpg}" height="100" width="100">*/-->
+<h1>  Welcome to Movie web Application</h1> 
+
+<form th:action="@{/movie/view-movie}">
+<input type="text" name="movieId" placeholder="Enter Movie ID ">
+<input type="submit" value="Search Movie">
+</form>
+<div th:if="${movie!=null}">
+<h3>[[(${movie.movieId})]]</h3>
+<h3>[[(${movie.movieName})]]</h3>
+<h3>[[(${movie.language})]]</h3>
+<h3>[[(${movie.rating})]]</h3>
+<h3>[[(${movie.genre})]]</h3>
+</div>
+
+<div th:if="${error!=null}">
+<h3 style="color:red">[[(${error})]]</h3>
+</div>
+
+<div th:replace="fragments/Navbar :: footer">
+</div>
+</body>
+</html>
